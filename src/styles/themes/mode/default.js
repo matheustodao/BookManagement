@@ -5,7 +5,7 @@ export const defaultMode = {
   colors: {
     background: '#F4F4F4',
     primary: '#FF7B5C',
-    secondary: '#E59481',
+    secondary: '#ED8268',
     details: '#DFDEE1',
     secondDetails: '#E3FFEE',
   },

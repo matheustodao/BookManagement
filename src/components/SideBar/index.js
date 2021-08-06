@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { IconContext } from 'react-icons';
@@ -23,22 +22,24 @@ export default function SideBar() {
   ), [pathname]);
 
   return (
-    <Container>
-      <ul>
-        {routes.map((route) => (
-          <List
-            key={route.id}
-            active={route.active}
-          >
-            <Go to={route.endpoint}>
-              <IconContext.Provider value={{ className: 'icon' }}>
-                {route.icon}
-              </IconContext.Provider>
-              {route.name}
-            </Go>
-          </List>
-        ))}
-      </ul>
-    </Container>
+    <header>
+      <Container>
+        <ul>
+          {routes.map((route) => (
+            <List
+              key={route.id}
+              active={route.active}
+            >
+              <Go to={route.endpoint}>
+                <IconContext.Provider value={{ className: 'icon' }}>
+                  {route.icon}
+                </IconContext.Provider>
+                {route.name}
+              </Go>
+            </List>
+          ))}
+        </ul>
+      </Container>
+    </header>
   );
 }
