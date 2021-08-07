@@ -10,4 +10,8 @@ export const common = {
     large: '1.8rem',
     secondLarge: '2.4rem',
   },
+  borderRadius: {
+    primary: '.8rem',
+    secondary: '.4rem',
+  },
 };
