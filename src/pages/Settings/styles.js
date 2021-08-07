@@ -4,7 +4,7 @@ export const Container = styled.div``;
 
 export const Mode = styled.button`
   border: none;
-  border-radius: .4rem;
+  border-radius: ${({ theme }) => theme.borderRadius.secondary};
   width: 15rem;
   height: 5rem;
   cursor: pointer;
