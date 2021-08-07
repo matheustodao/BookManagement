@@ -7,9 +7,7 @@ export const Container = styled.nav`
   padding-top: 7.2rem;
   padding-left: ${({ theme }) => theme.spacing.large};
   width: 30rem;
-  height: 100%;
   font-size: ${({ theme }) => theme.size.medium};
-  background: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const List = styled.li`

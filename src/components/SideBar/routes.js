@@ -14,7 +14,7 @@ export const routes = [
 
   {
     id: 1,
-    name: 'Books',
+    name: 'Book',
     icon: <RiBookFill />,
     endpoint: '/books',
     active: false,
@@ -22,7 +22,7 @@ export const routes = [
 
   {
     id: 2,
-    name: 'Authors',
+    name: 'Author',
     icon: <HiUsers />,
     endpoint: '/authors',
     active: false,
@@ -30,7 +30,7 @@ export const routes = [
 
   {
     id: 3,
-    name: 'Settings',
+    name: 'Setting',
     icon: <MdSettings />,
     endpoint: '/settings',
     active: false,

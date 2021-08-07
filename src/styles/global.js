@@ -5,6 +5,10 @@ export default createGlobalStyle`
     font-size: 62.5%;
   }
 
+  html, body {
+    height: auto;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -19,6 +23,7 @@ export default createGlobalStyle`
     font-weight: 400;
     height: 100vh;
     background: ${({ theme }) => theme.colors.background};
+
   }
 
   button {
@@ -28,6 +33,10 @@ export default createGlobalStyle`
   #root {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    min-height: 100vh;
+  }
+
+  #sidebar {
+    background: ${({ theme }) => theme.colors.secondary};
   }
 `;

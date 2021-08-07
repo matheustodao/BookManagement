@@ -22,7 +22,7 @@ export default function SideBar() {
   ), [pathname]);
 
   return (
-    <header>
+    <header id="sidebar">
       <Container>
         <ul>
           {routes.map((route) => (
