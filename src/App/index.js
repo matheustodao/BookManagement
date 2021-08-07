@@ -7,7 +7,7 @@ import Routes from '../routes';
 import GlobalStyle from '../styles/global';
 import SideBar from '../components/SideBar';
 
-import { ContainerRoutes } from './styles.';
+import { ContainerRoutes } from './styles';
 
 export default function App() {
   return (
