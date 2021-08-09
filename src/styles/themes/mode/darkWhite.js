@@ -7,7 +7,6 @@ export const darkWhite = {
     secondary: '#F8F3FF',
     darkPrimary: '#2d2d2dd9',
     details: '#565656',
-
     text: {
       dark: '#CCCCCC',
       darkSecondary: '#6D6875',
