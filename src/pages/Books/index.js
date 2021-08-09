@@ -19,7 +19,7 @@ export default function Books() {
       <Header
         placeholder="Search by: title, author or genre"
       >
-        <ButtonAnchor to="/">
+        <ButtonAnchor to="/" padding="1.2rem 2.4rem">
           <ImBooks size={24} />
           new book
         </ButtonAnchor>
