@@ -16,22 +16,37 @@ export const SearchBox = styled.form`
   align-items: center;
   height: 100%;
   width: 63rem;
+  box-shadow: ${({ theme }) => theme.shadow.main};
+
 
   button {
     border: none;
-    border-radius:
-      ${({ theme }) => theme.borderRadius.primary}
-      0 0
-      ${({ theme }) => theme.borderRadius.primary};
-    background: ${({ theme }) => theme.colors.secondary};
     width: 6rem;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F8F3FF;
-    box-shadow: 0px .1rem .2rem rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    color: ${({ theme }) => theme.colors.text.light};
+    background: ${({ theme }) => theme.colors.primary};
+    box-shadow: ${({ theme }) => theme.shadow.main};
+
+    border-radius:
+      ${({ theme }) => theme.borderRadius.primary}
+      0 0
+      ${({ theme }) => theme.borderRadius.primary};
+
+    transition: all .25s ease;
+    &:hover {
+      cursor: pointer;
+      filter: brightness(.8);
+
+    }
+
+    &:active {
+      transition: ease-out;
+      filter: brightness(1);
+    }
   }
 
   input {
@@ -40,9 +55,26 @@ export const SearchBox = styled.form`
     width: 100%;
     height: 100%;
     padding: 1.6rem;
-    color: ${({ theme }) => theme.colors.text.dark};
+    color: ${({ theme }) => theme.colors.text.darkSecondary};
+    border: .1rem solid ${({ theme }) => theme.colors.background.main};
+
+    border-radius:
+      0
+      ${({ theme }) => theme.borderRadius.primary}
+      ${({ theme }) => theme.borderRadius.primary}
+      0;
+
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.lightSecondary};
+    }
     &::-webkit-search-cancel-button {
       appearance: none;
+    }
+
+    transition: border .25s ease-in;
+
+    &:focus {
+      border: .1rem solid ${({ theme }) => theme.colors.primary};
     }
   }
 `;

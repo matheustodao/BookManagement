@@ -22,7 +22,7 @@ export default createGlobalStyle`
     font-size: 1rem;
     font-weight: 400;
     height: 100vh;
-    background: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.background.main};
 
   }
 
@@ -37,6 +37,6 @@ export default createGlobalStyle`
   }
 
   #sidebar {
-    background: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.background.sideBar};
   }
 `;

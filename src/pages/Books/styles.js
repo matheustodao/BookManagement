@@ -7,7 +7,7 @@ export const Container = styled.section`
   & .titleSection {
     display: flex;
     align-items: center;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text.active};
     margin-bottom: 4.8rem;
 
     svg {
@@ -20,7 +20,7 @@ export const Container = styled.section`
       text-transform: uppercase;
       letter-spacing: 0.055em;
       font-size: 3.6rem;
-      margin-left: .8rem;
+      margin-left: ${({ theme }) => theme.spacing.small};
     }
 
   }
@@ -51,13 +51,12 @@ export const BookCard = styled.article`
   max-width: 45.9rem;
   min-height: 16.8rem;
   width: 100%;
-  padding: 2.4rem 1.6rem;
+  padding: ${({ theme }) => theme.spacing.large} ${({ theme }) => theme.spacing.medium};
   transition: all .25s ease-in;
 
   & .containerImage {
     max-width: 8rem;
     max-height: 12rem;
-    padding: auto;
 
     img {
       text-align: center;
@@ -73,10 +72,10 @@ export const BookCard = styled.article`
 
 
   ${({ theme }) => css`
-    background: ${theme.colors.backgroundBookCard};
+    background: ${theme.colors.background.bookCard};
     border-radius: ${theme.borderRadius.primary};
-    box-shadow: ${theme.boxShadow};
-    border: .1rem solid ${theme.colors.primary};
+    box-shadow: ${theme.shadow.main};
+    /* border: .1rem solid ${theme.colors.primary}; */
      & .containerImage {
        img {
         border-radius: ${theme.borderRadius.secondary};
@@ -97,15 +96,15 @@ export const InfoBook = styled.div`
 
   span {
     font-weight: 300;
-    font-size: 1.2rem;
-    color: ${({ theme }) => theme.colors.text.light};
+    font-size: ${({ theme }) => theme.size.small};
+    color: ${({ theme }) => theme.colors.text.darkSecondary};
     text-transform: capitalize;
   }
 
   h3 {
     font-weight: 700;
     font-size: 1.8rem;
-    color: ${({ theme }) => theme.colors.text.secondary};
+    color: ${({ theme }) => theme.colors.darkPrimary};
     text-transform: uppercase;
     overflow: hidden;
     max-height: 5rem;

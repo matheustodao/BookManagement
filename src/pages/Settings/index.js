@@ -34,6 +34,15 @@ export default function Settings() {
         Dark
       </Mode>
 
+      <Mode
+        type="button"
+        onClick={() => onSelectTheme('darkWhite')}
+        bg="#5536"
+        color="#fff"
+      >
+        Dark White
+      </Mode>
+
     </Container>
   );
 }

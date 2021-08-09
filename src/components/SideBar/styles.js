@@ -15,16 +15,19 @@ export const List = styled.li`
   align-items: center;
   list-style: none;
   height: 6rem;
-  border-radius: .8rem 0 0 .8rem;
-  padding-left: 2.4rem;
-  background: ${({ active, theme }) => (active && theme.colors.background)};
-  box-shadow: ${({ active, theme }) => (active && theme.boxShadow)};
+  border-radius:
+    ${({ theme }) => theme.borderRadius.primary}
+    0 0
+    ${({ theme }) => theme.borderRadius.primary};
+  padding-left: ${({ theme }) => theme.spacing.medium};
+  background: ${({ active, theme }) => (active && theme.colors.background.main)};
+  box-shadow: ${({ active, theme }) => (active && theme.shadow.main)};
 
   a {
-    color: ${({ active, theme }) => (active ? theme.colors.primary : theme.colors.details)};
+    color: ${({ active, theme }) => (active ? theme.colors.text.active : theme.colors.details)};
   }
 
-  transition: all .25s ease-in;
+  transition: all .35s ease-in;
 `;
 
 export const Go = styled(Link)`
@@ -41,7 +44,7 @@ export const Go = styled(Link)`
   .icon {
     width: 24px;
     height: 24px;
-    margin-right: 1.8rem;
+    margin-right: ${({ theme }) => theme.spacing.medium};
   }
 
 `;
