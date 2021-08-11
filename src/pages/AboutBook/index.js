@@ -1,5 +1,10 @@
 import ReactDOM from 'react-dom';
-import { useHistory, useParams } from 'react-router-dom';
+import {
+  useHistory,
+  useParams,
+  useLocation,
+  Link,
+} from 'react-router-dom';
 
 import { books } from '../../mock/books';
 
@@ -8,6 +13,8 @@ import { Container } from './styles';
 export default function AboutBook() {
   const { id } = useParams();
   const history = useHistory();
+  const { pathname } = useLocation();
+  console.log(pathname);
 
   const book = books.find((item) => (
     item.id === Number(id) && item
@@ -20,7 +27,7 @@ export default function AboutBook() {
     <Container>
       <header>
         <div>
-          <a to="/books">Voltar</a>
+          <Link to="/books">Voltar</Link>
         </div>
       </header>
 
@@ -40,21 +47,28 @@ export default function AboutBook() {
         <div>
           <span>Genre(s)</span>
           {book.genres.map((genre) => (
-            <div>{genre}</div>
+            <div key={genre}>{genre}</div>
           ))}
         </div>
 
         <div>
           <div>
             <span>author</span>
-            <strong id="author">{book.author}</strong>
+            <strong>{book.author}</strong>
           </div>
 
           <div>
-            <span>published</span>
-            <strong id="author">{book.published}</strong>
+            <span>published by</span>
+            <strong>{book.published}</strong>
           </div>
+        </div>
 
+        <div>
+          <span>synopsis of the book</span>
+          <div>
+            <p>{book.synopsis}</p>
+            <Link to={`${pathname}/show-more-synopsis`}>show more</Link>
+          </div>
         </div>
       </div>
     </Container>,
