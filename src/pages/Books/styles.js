@@ -103,7 +103,7 @@ export const InfoBook = styled.div`
 
   h3 {
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: ${({ theme }) => theme.colors.darkPrimary};
     text-transform: uppercase;
     overflow: hidden;

@@ -1,6 +1,7 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Books from './pages/Books';
+import AboutBook from './pages/AboutBook';
 import Settings from './pages/Settings';
 
 export default function Routes() {
@@ -9,7 +10,8 @@ export default function Routes() {
       <Route exact path="/">
         <Redirect to="dashboard" />
       </Route>
-      <Route path="/books" component={Books} />
+      <Route exact path="/books" component={Books} />
+      <Route path="/books/:id/:author/:title/" component={AboutBook} />
       <Route path="/settings" component={Settings} />
     </Switch>
   );

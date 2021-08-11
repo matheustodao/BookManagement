@@ -1,3 +1,5 @@
+import { useHistory } from 'react-router-dom';
+
 import { ImBooks } from 'react-icons/im';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 
@@ -11,9 +13,24 @@ import {
   WrapperBookCard,
 } from './styles';
 
-import { books } from './books';
+import { books } from '../../mock/books';
 
 export default function Books() {
+  const history = useHistory();
+
+  function handleGoAboutBook(item) {
+    const { id } = item;
+    const title = item.title
+      .split(' ')
+      .join('-')
+      .toLowerCase();
+    const author = item.author
+      .split(' ')
+      .join('')
+      .toLowerCase();
+    history.push(`/books/${id}/${author}/${title}`);
+  }
+
   return (
     <>
       <Header
@@ -35,6 +52,7 @@ export default function Books() {
           {books.map((book) => (
             <BookCard
               key={book.id}
+              onClick={() => handleGoAboutBook(book)}
             >
               <div className="containerImage">
                 <img
