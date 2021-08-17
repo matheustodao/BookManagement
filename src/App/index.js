@@ -3,11 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import ThemeProvider, { ThemeContext } from '../contexts/ThemeContext';
 
-import Routes from '../routes';
-import GlobalStyle from '../styles/global';
-import SideBar from '../components/SideBar';
-
-import { ContainerRoutes } from './styles';
+import Layout from './components/layout';
 
 export default function App() {
   return (
@@ -16,11 +12,9 @@ export default function App() {
         {({ theme }) => (
           <BrowserRouter>
             <StyledThemeProvider theme={theme}>
-              <GlobalStyle />
-              <SideBar />
-              <ContainerRoutes>
-                <Routes />
-              </ContainerRoutes>
+
+              <Layout />
+
             </StyledThemeProvider>
           </BrowserRouter>
         )}
