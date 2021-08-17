@@ -8,7 +8,7 @@ export const darkWhite = {
     darkPrimary: '#2d2d2dd9',
     details: '#565656',
     text: {
-      dark: '#CCCCCC',
+      dark: '#828282',
       darkSecondary: '#6D6875',
       light: '#F8F3FF',
       lightSecondary: '#F4F4F4',

@@ -10,7 +10,7 @@ export const dark = {
 
     text: {
       dark: '#CCCCCC',
-      darkSecondary: '#6D6875',
+      darkSecondary: '#828282',
       light: '#F8F3FF',
       lightSecondary: '#F4F4F4',
       active: '#F4F4F4',

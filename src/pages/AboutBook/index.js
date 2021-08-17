@@ -6,15 +6,28 @@ import {
   Link,
 } from 'react-router-dom';
 
+import { BsArrowLeft, BsBoxArrowInUpRight } from 'react-icons/bs';
+// import { BsBoxArrowInUpRight } from 'react-icons/bs';
+
 import { books } from '../../mock/books';
 
-import { Container } from './styles';
+import {
+  Container,
+  ButtonGoBack,
+  Wrapper,
+  Image,
+  InformationBook,
+  Title,
+  Heading,
+  Genres,
+  BookSpine,
+  Synopsis,
+} from './styles';
 
 export default function AboutBook() {
   const { id } = useParams();
   const history = useHistory();
   const { pathname } = useLocation();
-  console.log(pathname);
 
   const book = books.find((item) => (
     item.id === Number(id) && item
@@ -27,50 +40,64 @@ export default function AboutBook() {
     <Container>
       <header>
         <div>
-          <Link to="/books">Voltar</Link>
+          <ButtonGoBack to="/books">
+            <BsArrowLeft size={24} />
+            Voltar
+          </ButtonGoBack>
         </div>
       </header>
 
-      <div>
-        <div>
-          <img
-            src={book.image}
-            alt={`Capa do livro ${book.title}`}
-          />
-        </div>
+      <section>
+        <Wrapper>
+          <Image>
+            <img
+              src={book.image}
+              alt={`Capa do livro ${book.title}`}
+            />
+          </Image>
 
-        <div>
-          <span>Title Of book</span>
-          <strong>{book.title}</strong>
-        </div>
+          <InformationBook>
+            <Title>
+              <Heading>title</Heading>
+              <small>{book.title}</small>
+            </Title>
 
-        <div>
-          <span>Genre(s)</span>
-          {book.genres.map((genre) => (
-            <div key={genre}>{genre}</div>
-          ))}
-        </div>
+            <Genres>
+              <Heading>genres</Heading>
+              <div>
+                {book.genres.map((genre) => (
+                  <button type="button" key={genre}>
+                    {genre}
+                  </button>
+                ))}
+              </div>
+            </Genres>
 
-        <div>
-          <div>
-            <span>author</span>
-            <strong>{book.author}</strong>
-          </div>
+            <BookSpine>
+              <div>
+                <Heading>author</Heading>
+                <small>{book.author}</small>
+              </div>
 
-          <div>
-            <span>published by</span>
-            <strong>{book.published}</strong>
-          </div>
-        </div>
+              <div>
+                <Heading>published by</Heading>
+                <small>{book.published}</small>
+              </div>
+            </BookSpine>
 
-        <div>
-          <span>synopsis of the book</span>
-          <div>
-            <p>{book.synopsis}</p>
-            <Link to={`${pathname}/show-more-synopsis`}>show more</Link>
-          </div>
-        </div>
-      </div>
+            <Synopsis>
+              <Heading>Synopsis</Heading>
+              <p>
+                {book.synopsis}
+                <Link to={`${pathname}/show-more-synopsis`}>
+                  show more
+                  <BsBoxArrowInUpRight size={18} />
+                </Link>
+              </p>
+            </Synopsis>
+          </InformationBook>
+        </Wrapper>
+      </section>
     </Container>,
     document.getElementById('about-book'),
   );
