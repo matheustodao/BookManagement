@@ -157,6 +157,11 @@ export const BookSpine = styled.div`
       font-weight: 400;
       font-family: 'Montserrat', sans-serif;
       margin-top: .8rem;
+
+      a {
+        margin-left: .8rem;
+        color: ${({ theme }) => theme.colors.primary};
+      }
     }
   }
 `;

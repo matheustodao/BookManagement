@@ -24,7 +24,7 @@ export default function Books() {
       .split(' ')
       .join('-')
       .toLowerCase();
-    const author = item.author
+    const author = item.author[0]
       .split(' ')
       .join('')
       .toLowerCase();
@@ -62,7 +62,7 @@ export default function Books() {
               </div>
 
               <InfoBook>
-                <span>{book.author}</span>
+                <span>{book.author[0]}</span>
                 <h3>{book.title}</h3>
                 <span>{book.published}</span>
               </InfoBook>

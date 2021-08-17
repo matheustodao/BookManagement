@@ -76,7 +76,18 @@ export default function AboutBook() {
             <BookSpine>
               <div>
                 <Heading>author</Heading>
-                <small>{book.author}</small>
+                {
+                  book.author.length > 1
+                    ? (
+                      <small>
+                        {book.author[0]}
+                        <Link to={`${pathname}/show-more-authors`}>
+                          <BsBoxArrowInUpRight size={18} />
+                        </Link>
+                      </small>
+                    )
+                    : <small>{book.author[0]}</small>
+                }
               </div>
 
               <div>
