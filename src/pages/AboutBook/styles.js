@@ -6,16 +6,21 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: ${({ theme }) => theme.colors.background.main};
   padding-top: 5.5rem;
+  header {
+    height: 5.4rem;
+    margin-bottom: 8rem;
+
+  }
+
   header div {
     width: 24.2rem;
-    height: 5.4rem;
+    height: 100%;
     background: ${({ theme }) => theme.colors.primary};
     border-top-right-radius: ${({ theme }) => theme.borderRadius.secondary};
     border-bottom-right-radius: ${({ theme }) => theme.borderRadius.secondary};
-    margin-bottom: 8rem;
 
     display: flex;
     align-items: center;
